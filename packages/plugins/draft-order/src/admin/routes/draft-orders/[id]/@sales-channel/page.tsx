@@ -39,11 +39,11 @@ const SalesChannel = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Edit Sales Channel</Heading>
+          <Heading>Editar Canal de ventas</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description asChild>
           <span className="sr-only">
-            Update which sales channel the draft order is associated with
+            Actualizar con qué canal de ventas está asociado el borrador del pedido.
           </span>
         </RouteDrawer.Description>
       </RouteDrawer.Header>
@@ -74,7 +74,7 @@ const SalesChannelForm = ({ order }: SalesChannelFormProps) => {
       },
       {
         onSuccess: () => {
-          toast.success("Sales channel updated")
+          toast.success("Canal de ventas actualizado")
           handleSuccess()
         },
         onError: (error) => {
@@ -97,11 +97,11 @@ const SalesChannelForm = ({ order }: SalesChannelFormProps) => {
           <div className="flex justify-end gap-2">
             <RouteDrawer.Close asChild>
               <Button size="small" variant="secondary">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit" isLoading={isPending}>
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>
@@ -137,7 +137,7 @@ const SalesChannelField = ({ control, order }: SalesChannelFieldProps) => {
       render={({ field }) => {
         return (
           <Form.Item>
-            <Form.Label>Sales Channel</Form.Label>
+            <Form.Label>Canal de ventas</Form.Label>
             <Form.Control>
               <Combobox
                 options={salesChannels.options}
@@ -145,7 +145,7 @@ const SalesChannelField = ({ control, order }: SalesChannelFieldProps) => {
                 isFetchingNextPage={salesChannels.isFetchingNextPage}
                 searchValue={salesChannels.searchValue}
                 onSearchValueChange={salesChannels.onSearchValueChange}
-                placeholder="Select sales channel"
+                placeholder="Seleccionar canal de ventas"
                 {...field}
               />
             </Form.Control>

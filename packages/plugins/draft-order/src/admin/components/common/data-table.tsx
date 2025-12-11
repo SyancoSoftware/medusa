@@ -282,8 +282,8 @@ export const DataTable = <TData,>({
             </div>
           )}
           <div className="flex items-center justify-end gap-x-2 md:hidden">
-            {enableFiltering && <Primitive.FilterMenu tooltip="Filter" />}
-            <Primitive.SortingMenu tooltip="Sort" />
+            {enableFiltering && <Primitive.FilterMenu tooltip="Filtrar" />}
+            <Primitive.SortingMenu tooltip="Ordenar" />
             {actionMenu && <ActionMenu variant="primary" {...actionMenu} />}
             {action && <DataTableAction {...action} />}
           </div>
@@ -293,14 +293,14 @@ export const DataTable = <TData,>({
             <div className="w-full md:w-auto">
               <Primitive.Search
                 data-modal-id="modal-search-input"
-                placeholder="Search"
+                placeholder="Buscar"
                 autoFocus={autoFocusSearch}
               />
             </div>
           )}
           <div className="hidden items-center gap-x-2 md:flex">
-            {enableFiltering && <Primitive.FilterMenu tooltip="Filter" />}
-            <Primitive.SortingMenu tooltip="Sort" />
+            {enableFiltering && <Primitive.FilterMenu tooltip="Filtrar" />}
+            <Primitive.SortingMenu tooltip="Ordenar" />
             {actionMenu && <ActionMenu variant="primary" {...actionMenu} />}
             {action && <DataTableAction {...action} />}
           </div>
@@ -309,7 +309,7 @@ export const DataTable = <TData,>({
       <Primitive.Table emptyState={emptyState} />
       {enablePagination && <Primitive.Pagination />}
       {enableCommands && (
-        <Primitive.CommandBar selectedLabel={(count) => `${count} selected`} />
+        <Primitive.CommandBar selectedLabel={(count) => `${count} seleccionados`} />
       )}
     </Primitive>
   )

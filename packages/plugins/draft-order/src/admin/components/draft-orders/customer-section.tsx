@@ -77,7 +77,7 @@ const ID = ({ order }: CustomerSectionProps) => {
   return (
     <div className="text-ui-fg-subtle grid grid-cols-2 items-center px-6 py-4">
       <Text size="small" leading="compact" weight="plus">
-        ID
+        Identificador
       </Text>
       <Link
         to={`/customers/${id}`}
@@ -107,7 +107,7 @@ const Contact = ({ order }: CustomerSectionProps) => {
   return (
     <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
       <Text size="small" leading="compact" weight="plus">
-        Contact
+        Contacto
       </Text>
       <div className="flex flex-col gap-y-2">
         <div className="grid grid-cols-[1fr_20px] items-start gap-x-2">
@@ -155,7 +155,7 @@ const AddressPrint = ({
   return (
     <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
       <Text size="small" leading="compact" weight="plus">
-        {type === "shipping" ? "Shipping address" : "Billing address"}
+        {type === "shipping" ? "Dirección de Envío" : "Dirección de Facturación"}
       </Text>
       {address ? (
         <div className="grid grid-cols-[1fr_20px] items-start gap-x-2">
@@ -199,10 +199,10 @@ const Addresses = ({ order }: CustomerSectionProps) => {
             weight="plus"
             className="text-ui-fg-subtle"
           >
-            Billing address
+            Dirección de Envio
           </Text>
           <Text size="small" leading="compact" className="text-ui-fg-muted">
-            Same as shipping address
+            Igual que la dirección de envío
           </Text>
         </div>
       )}

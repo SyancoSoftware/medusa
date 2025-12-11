@@ -29,11 +29,11 @@ const ShippingAddress = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Edit Shipping Address</Heading>
+          <Heading>Editar dirección de envío</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description asChild>
           <span className="sr-only">
-            Edit the shipping address for the draft order
+            Edita la dirección de envío del borrador del pedido.
           </span>
         </RouteDrawer.Description>
       </RouteDrawer.Header>
@@ -106,7 +106,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="country_code"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>Country</Form.Label>
+                  <Form.Label>Pais</Form.Label>
                   <Form.Control>
                     <CountrySelect {...field} />
                   </Form.Control>
@@ -120,7 +120,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
                 name="first_name"
                 render={({ field }) => (
                   <Form.Item>
-                    <Form.Label>First name</Form.Label>
+                    <Form.Label>Nombre</Form.Label>
                     <Form.Control>
                       <Input {...field} />
                     </Form.Control>
@@ -133,7 +133,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
                 name="last_name"
                 render={({ field }) => (
                   <Form.Item>
-                    <Form.Label>Last name</Form.Label>
+                    <Form.Label>Apellido</Form.Label>
                     <Form.Control>
                       <Input {...field} />
                     </Form.Control>
@@ -147,7 +147,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="company"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label optional>Company</Form.Label>
+                  <Form.Label optional>Empresa</Form.Label>
                   <Form.Control>
                     <Input {...field} />
                   </Form.Control>
@@ -160,7 +160,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="address_1"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label>Address</Form.Label>
+                  <Form.Label>Dirección</Form.Label>
                   <Form.Control>
                     <Input {...field} />
                   </Form.Control>
@@ -173,7 +173,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="address_2"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label optional>Apartment, suite, etc.</Form.Label>
+                  <Form.Label optional>Piso, departamento, etc.</Form.Label>
                   <Form.Control>
                     <Input {...field} />
                   </Form.Control>
@@ -187,7 +187,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
                 name="postal_code"
                 render={({ field }) => (
                   <Form.Item>
-                    <Form.Label>Postal code</Form.Label>
+                    <Form.Label>Código postal</Form.Label>
                     <Form.Control>
                       <Input {...field} />
                     </Form.Control>
@@ -200,7 +200,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
                 name="city"
                 render={({ field }) => (
                   <Form.Item>
-                    <Form.Label>City</Form.Label>
+                    <Form.Label>Ciudad</Form.Label>
                     <Form.Control>
                       <Input {...field} />
                     </Form.Control>
@@ -214,7 +214,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="province"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label optional>Province / State</Form.Label>
+                  <Form.Label optional>Provincia</Form.Label>
                   <Form.Control>
                     <Input {...field} />
                   </Form.Control>
@@ -227,7 +227,7 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
               name="phone"
               render={({ field }) => (
                 <Form.Item>
-                  <Form.Label optional>Phone</Form.Label>
+                  <Form.Label optional>Telefono</Form.Label>
                   <Form.Control>
                     <Input {...field} />
                   </Form.Control>
@@ -241,11 +241,11 @@ const ShippingAddressForm = ({ order }: ShippingAddressFormProps) => {
           <div className="flex justify-end gap-2">
             <RouteDrawer.Close asChild>
               <Button size="small" variant="secondary">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit" isLoading={isPending}>
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>

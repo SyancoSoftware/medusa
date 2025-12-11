@@ -100,7 +100,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           disabled={(min !== undefined && value <= min) || disabled}
         >
           <Minus />
-          <span className="sr-only">{`Decrease by ${step}`}</span>
+          <span className="sr-only">{`Decrementar en ${step}`}</span>
         </button>
         <button
           className={clx(
@@ -118,7 +118,7 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(
           disabled={(max !== undefined && value >= max) || disabled}
         >
           <Plus />
-          <span className="sr-only">{`Increase by ${step}`}</span>
+          <span className="sr-only">{`Incrementar en ${step}`}</span>
         </button>
       </div>
     )

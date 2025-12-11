@@ -1,23 +1,23 @@
 export const region = [
   {
     "title": "Manage Regions",
-    "path": "https://docs.medusajs.com/user-guide/settings/regions"
+    "path": "https://docs.medusajs.com/user-guide\\settings\\regions\\page.mdx"
   },
   {
     "title": "Implement Express Checkout with Medusa",
-    "path": "https://docs.medusajs.com/resources/storefront-development/guides/express-checkout"
+    "path": "https://docs.medusajs.com/resources\\storefront-development\\guides\\express-checkout\\page.mdx"
   },
   {
     "title": "Region React Context in Storefront",
-    "path": "https://docs.medusajs.com/resources/storefront-development/regions/context"
+    "path": "https://docs.medusajs.com/resources\\storefront-development\\regions\\context\\page.mdx"
   },
   {
     "title": "List Regions in Storefront",
-    "path": "https://docs.medusajs.com/resources/storefront-development/regions/list"
+    "path": "https://docs.medusajs.com/resources\\storefront-development\\regions\\list\\page.mdx"
   },
   {
     "title": "Store Selected Region in Storefront",
-    "path": "https://docs.medusajs.com/resources/storefront-development/regions/store-retrieve-region"
+    "path": "https://docs.medusajs.com/resources\\storefront-development\\regions\\store-retrieve-region\\page.mdx"
   },
   {
     "title": "validateShippingOptionPricesStep",

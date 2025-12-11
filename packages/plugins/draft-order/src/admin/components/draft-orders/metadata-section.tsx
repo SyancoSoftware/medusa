@@ -11,9 +11,9 @@ export const MetadataSection = ({ order }: MetadataSectionProps) => {
   return (
     <Container className="flex items-center justify-between">
       <div className="flex items-center gap-x-2">
-        <Heading level="h2">Metadata</Heading>
+        <Heading level="h2">Metadatos</Heading>
         <Badge size="2xsmall" rounded="full">
-          {Object.keys(order.metadata || {}).length} keys
+          {Object.keys(order.metadata || {}).length} claves
         </Badge>
       </div>
       <IconButton

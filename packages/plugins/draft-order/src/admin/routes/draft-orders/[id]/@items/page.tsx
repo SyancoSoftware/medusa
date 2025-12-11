@@ -103,11 +103,11 @@ const Items = () => {
       ) : (
         <div>
           <RouteFocusModal.Title asChild>
-            <span className="sr-only">Edit Items</span>
+            <span className="sr-only">Editar Items</span>
           </RouteFocusModal.Title>
           <RouteFocusModal.Description asChild>
             <span className="sr-only">
-              Loading data for the draft order, please wait...
+              Cargando datos para el borrador del pedido, por favor espere...
             </span>
           </RouteFocusModal.Description>
         </div>
@@ -149,7 +149,7 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
 
     await requestOrderEdit(undefined, {
       onError: (e) => {
-        toast.error(`Failed to request order edit: ${e.message}`)
+        toast.error(`No se pudo solicitar la edición del pedido: ${e.message}`)
       },
       onSuccess: () => {
         requestSucceeded = true
@@ -163,7 +163,7 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
 
     await confirmOrderEdit(undefined, {
       onError: (e) => {
-        toast.error(`Failed to confirm order edit: ${e.message}`)
+        toast.error(`No se pudo confirmar la edición del pedido: ${e.message}`)
       },
       onSuccess: () => {
         handleSuccess()
@@ -212,11 +212,11 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
             <div className="flex w-full max-w-[720px] flex-col gap-y-6 px-6 py-16">
               <div>
                 <RouteFocusModal.Title asChild>
-                  <Heading>Edit Items</Heading>
+                  <Heading>Editar Items</Heading>
                 </RouteFocusModal.Title>
                 <RouteFocusModal.Description asChild>
                   <Text size="small" className="text-ui-fg-subtle">
-                    Edit the items in the draft order
+                    Edita los elementos en el borrador del pedido.
                   </Text>
                 </RouteFocusModal.Description>
               </div>
@@ -228,14 +228,14 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
                       Items
                     </Text>
                     <Text size="small" className="text-ui-fg-subtle">
-                      Choose items from the product catalog.
+                      Seleccione artículos del catálogo de productos.
                     </Text>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="flex-1">
                       <Input
                         type="search"
-                        placeholder="Search items"
+                        placeholder="Buscar items"
                         value={searchValue}
                         onChange={(e) => onSearchValueChange(e.target.value)}
                       />
@@ -269,12 +269,12 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
                       </div>
                       <div>
                         <Text size="small" weight="plus">
-                          Quantity
+                          Cantidad
                         </Text>
                       </div>
                       <div className="text-right">
                         <Text size="small" weight="plus">
-                          Price
+                          Precio
                         </Text>
                       </div>
                       <div />
@@ -284,10 +284,10 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
                     {itemCount <= 0 ? (
                       <div className="bg-ui-bg-base shadow-elevation-card-rest flex flex-col items-center justify-center gap-1 gap-x-3 rounded-lg p-4">
                         <Text size="small" weight="plus" leading="compact">
-                          There are no items in this order
+                          No hay artículos en este pedido.
                         </Text>
                         <Text size="small" className="text-ui-fg-subtle">
-                          Add items to the order to get started.
+                          Agrega artículos al pedido para comenzar.
                         </Text>
                       </div>
                     ) : matches.length > 0 ? (
@@ -302,10 +302,10 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
                     ) : (
                       <div className="bg-ui-bg-base shadow-elevation-card-rest flex flex-col items-center justify-center gap-1 gap-x-3 rounded-lg p-4">
                         <Text size="small" weight="plus" leading="compact">
-                          No items found
+                          No se encontraron artículos.
                         </Text>
                         <Text size="small" className="text-ui-fg-subtle">
-                          No items found for "{query}".
+                          No se encontraron artículos para "{query}".
                         </Text>
                       </div>
                     )}
@@ -351,7 +351,7 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
         <div className="flex items-center justify-end gap-x-2">
           <RouteFocusModal.Close asChild>
             <Button size="small" variant="secondary" type="button">
-              Cancel
+              Cancelar
             </Button>
           </RouteFocusModal.Close>
           <Button
@@ -360,7 +360,7 @@ const ItemsForm = ({ preview, currencyCode }: ItemsFormProps) => {
             onClick={onSubmit}
             isLoading={isSubmitting}
           >
-            Save
+            Guardar
           </Button>
         </div>
       </RouteFocusModal.Footer>
@@ -893,7 +893,7 @@ const ExistingItemsForm = ({ orderId, items }: ExistingItemsFormProps) => {
         </StackedFocusModal.Title>
         <StackedFocusModal.Description asChild>
           <span className="sr-only">
-            Choose product variants to add to the order.
+            Seleccione las variantes de producto que desea añadir al pedido.
           </span>
         </StackedFocusModal.Description>
       </StackedFocusModal.Header>
@@ -920,11 +920,11 @@ const ExistingItemsForm = ({ orderId, items }: ExistingItemsFormProps) => {
         <div className="flex items-center justify-end gap-x-2">
           <StackedFocusModal.Close asChild>
             <Button size="small" variant="secondary" type="button">
-              Cancel
+              Cancelar
             </Button>
           </StackedFocusModal.Close>
           <Button size="small" type="button" onClick={onSubmit}>
-            Update items
+            Actualizar articulos
           </Button>
         </div>
       </StackedFocusModal.Footer>
@@ -981,7 +981,7 @@ const useColumns = () => {
         sortDescLabel: "Newest first",
       }),
       columnHelper.accessor("created_at", {
-        header: "Created",
+        header: "Fecha creación",
         cell: ({ getValue }) => {
           return (
             <Tooltip
@@ -1053,8 +1053,7 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
                   </StackedFocusModal.Title>
                   <StackedFocusModal.Description asChild>
                     <Text size="small" className="text-ui-fg-subtle">
-                      Add a custom item to the order. This will add a new line
-                      item that is not associated with an existing product.
+                      Agregue un artículo personalizado al pedido. Esto añadirá un nuevo artículo que no está asociado a ningún producto existente.
                     </Text>
                   </StackedFocusModal.Description>
                 </div>
@@ -1066,8 +1065,8 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
                     <Form.Item>
                       <div className="grid grid-cols-2 gap-x-3">
                         <div>
-                          <Form.Label>Title</Form.Label>
-                          <Form.Hint>Enter the title of the item</Form.Hint>
+                          <Form.Label>Titulo</Form.Label>
+                          <Form.Hint>Ingrese el titulo del articulo</Form.Hint>
                         </div>
                         <div>
                           <Form.Control>
@@ -1087,9 +1086,9 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
                     <Form.Item>
                       <div className="grid grid-cols-2 gap-x-3">
                         <div>
-                          <Form.Label>Unit price</Form.Label>
+                          <Form.Label>Precio unitario</Form.Label>
                           <Form.Hint>
-                            Enter the unit price of the item
+                            Ingrese el precio unitario del articulo
                           </Form.Hint>
                         </div>
                         <div>
@@ -1117,8 +1116,8 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
                     <Form.Item>
                       <div className="grid grid-cols-2 gap-x-3">
                         <div>
-                          <Form.Label>Quantity</Form.Label>
-                          <Form.Hint>Enter the quantity of the item</Form.Hint>
+                          <Form.Label>Cantidad</Form.Label>
+                          <Form.Hint>Ingrese la cantidad de articulos</Form.Hint>
                         </div>
                         <div className="w-full flex-1">
                           <Form.Control>
@@ -1139,11 +1138,11 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
             <div className="flex items-center justify-end gap-x-2">
               <StackedFocusModal.Close asChild>
                 <Button size="small" variant="secondary" type="button">
-                  Cancel
+                  Cancelar
                 </Button>
               </StackedFocusModal.Close>
               <Button size="small" type="button" onClick={onSubmit}>
-                Add item
+                Añadir articulo
               </Button>
             </div>
           </StackedFocusModal.Footer>

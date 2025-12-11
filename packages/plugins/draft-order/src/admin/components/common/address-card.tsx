@@ -32,7 +32,7 @@ export const AddressCard = ({
     <div className="px-3 py-2 rounded-lg bg-ui-bg-component shadow-elevation-card-rest flex items-center gap-4">
       {!isReady ? <LoadingState /> : <AddressInfo address={address} />}
       <Badge size="2xsmall">
-        {tag === "shipping" ? "Shipping" : "Billing"}
+        {tag === "shipping" ? "Envío" : "Facturación"}
       </Badge>
       {onRemove && (
         <IconButton

@@ -10,7 +10,7 @@ const CustomItems = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Edit Custom Items</Heading>
+          <Heading>Editar elementos personalizados</Heading>
         </RouteDrawer.Title>
       </RouteDrawer.Header>
       <CustomItemsForm />
@@ -31,11 +31,11 @@ const CustomItemsForm = () => {
           <div className="flex justify-end gap-2">
             <RouteDrawer.Close asChild>
               <Button size="small" variant="secondary">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit">
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>

@@ -54,7 +54,7 @@ export const JsonViewSection = ({ data }: JsonViewSectionProps) => {
                 </Heading>
               </Drawer.Title>
               <Drawer.Description className="sr-only">
-                View the JSON representation of the draft order.
+                Consulte la representación JSON del borrador del pedido.
               </Drawer.Description>
             </div>
             <div className="flex items-center gap-x-2">

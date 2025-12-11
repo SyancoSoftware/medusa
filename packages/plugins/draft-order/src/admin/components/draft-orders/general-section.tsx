@@ -43,7 +43,7 @@ export const GeneralSection = ({ order }: GeneralSectionProps) => {
     <Container className="flex items-center justify-between gap-4">
       <div>
         <div className="flex items-center gap-x-2">
-          <Heading>Draft Order #{order.display_id}</Heading>
+          <Heading>Pedido borrador #{order.display_id}</Heading>
           <Copy content={`#${order.display_id}`} />
           {isRegionLoaded ? (
             <Badge size="2xsmall" rounded="full" asChild>
@@ -57,7 +57,7 @@ export const GeneralSection = ({ order }: GeneralSectionProps) => {
           {`${getFullDate({
             date: order.created_at,
             includeTime: true,
-          })} from ${order.sales_channel?.name}`}
+          })} de ${order.sales_channel?.name}`}
         </Text>
       </div>
       <ActionMenu
@@ -65,12 +65,12 @@ export const GeneralSection = ({ order }: GeneralSectionProps) => {
           {
             actions: [
               {
-                label: "Edit sales channel",
+                label: "Editar canal de ventas",
                 icon: <Channels />,
                 to: "sales-channel",
               },
               {
-                label: "Delete draft order",
+                label: "Eliminar pedido borrador",
                 icon: <Trash />,
                 onClick: async () => {
                   try {

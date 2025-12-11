@@ -22,7 +22,7 @@ import { getFullDate } from "../../lib/utils/date-utils"
 const PAGE_SIZE = 20
 
 export const handle = {
-  breadcrumb: () => "Draft Orders",
+  breadcrumb: () => "Pedidos borrador",
 }
 
 const List = () => {
@@ -60,20 +60,20 @@ const List = () => {
           isLoading={isPending}
           pageSize={PAGE_SIZE}
           rowCount={count}
-          heading="Draft Orders"
+          heading="Pedidos en borrador"
           action={{
-            label: "Create",
+            label: "Crear",
             to: "create",
           }}
           rowHref={(row) => `${row.id}`}
           emptyState={{
             empty: {
-              heading: "No draft orders found",
-              description: "Create a new draft order to get started.",
+              heading: "No se encontraron pedidos en borrador",
+              description: "Para empezar, cree un nuevo borrador de pedido.",
             },
             filtered: {
-              heading: "No results found",
-              description: "No draft orders match your filter criteria.",
+              heading: "Sin resultados",
+              description: "No hay pedidos en borrador que coincidan con sus criterios de filtro.",
             },
           }}
         />
@@ -84,7 +84,7 @@ const List = () => {
 }
 
 export const config = defineRouteConfig({
-  label: "Drafts",
+  label: "Borrador",
   nested: "/orders",
 })
 
@@ -94,14 +94,14 @@ const useColumns = () => {
   return useMemo(
     () => [
       columnHelper.accessor("display_id", {
-        header: "Display ID",
+        header: "Identificador",
         cell: ({ getValue }) => {
           return `#${getValue()}`
         },
         enableSorting: true,
       }),
       columnHelper.accessor("created_at", {
-        header: "Date",
+        header: "Fecha",
         cell: ({ getValue }) => {
           return (
             <Tooltip
@@ -114,14 +114,14 @@ const useColumns = () => {
         enableSorting: true,
       }),
       columnHelper.accessor("customer_id", {
-        header: "Customer",
+        header: "Cliente",
         cell: ({ row }) => {
           return row.original.customer?.email || "-"
         },
         enableSorting: true,
       }),
       columnHelper.accessor("sales_channel_id", {
-        header: "Sales Channel",
+        header: "Canal de ventas",
         cell: ({ row }) => {
           return row.original.sales_channel?.name || "-"
         },
@@ -174,7 +174,7 @@ const useFilters = (): DataTableFilter[] => {
     return [
       {
         id: "customer_id",
-        label: "Customer",
+        label: "Cliente",
         options:
           customers?.map((customer) => ({
             label: customer.email,
@@ -184,7 +184,7 @@ const useFilters = (): DataTableFilter[] => {
       },
       {
         id: "sales_channel_id",
-        label: "Sales Channel",
+        label: "Canal de ventas",
         options:
           sales_channels?.map((sales_channel) => ({
             label: sales_channel.name,

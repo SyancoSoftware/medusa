@@ -54,10 +54,10 @@ const Metadata = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Metadata</Heading>
+          <Heading>Metadatos</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description asChild>
-          <span className="sr-only">Add metadata to the draft order.</span>
+          <span className="sr-only">Agregar metadatos al borrador del pedido.</span>
         </RouteDrawer.Description>
       </RouteDrawer.Header>
       {!isReady ? (
@@ -100,7 +100,7 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
       },
       {
         onSuccess: () => {
-          toast.success("Metadata updated")
+          toast.success("Metadatos actualizados")
           handleSuccess()
         },
         onError: (error) => {
@@ -146,10 +146,10 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
           <div className="bg-ui-bg-base shadow-elevation-card-rest grid grid-cols-1 divide-y rounded-lg">
             <div className="bg-ui-bg-subtle grid grid-cols-2 divide-x rounded-t-lg">
               <div className="txt-compact-small-plus text-ui-fg-subtle px-2 py-1.5">
-                <label id={METADATA_KEY_LABEL_ID}>Key</label>
+                <label id={METADATA_KEY_LABEL_ID}>Clave</label>
               </div>
               <div className="txt-compact-small-plus text-ui-fg-subtle px-2 py-1.5">
-                <label id={METADATA_VALUE_LABEL_ID}>Value</label>
+                <label id={METADATA_VALUE_LABEL_ID}>Valor</label>
               </div>
             </div>
             {fields.map((field, index) => {
@@ -188,7 +188,7 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
                                   aria-labelledby={METADATA_KEY_LABEL_ID}
                                   {...field}
                                   disabled={isDisabled}
-                                  placeholder="Key"
+                                  placeholder="Clave"
                                 />
                               </Form.Control>
                             </Form.Item>
@@ -207,7 +207,7 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
                                   {...field}
                                   value={isDisabled ? placeholder : value}
                                   disabled={isDisabled}
-                                  placeholder="Value"
+                                  placeholder="Valor"
                                 />
                               </Form.Control>
                             </Form.Item>
@@ -261,10 +261,10 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
             })}
           </div>
           {hasUneditableRows && (
-            <InlineTip variant="warning" label={"Some rows are disabled"}>
-              This object contains non-primitive metadata, such as arrays or
-              objects, that can't be edited here. To edit the disabled rows, use
-              the API directly.
+            <InlineTip variant="warning" label={"Algunas filas están deshabilitadas"}>
+              Este objeto contiene metadatos no primitivos, como matrices u objetos,
+              que no se pueden editar aquí. Para editar las filas deshabilitadas, utilice
+              la API directamente.
             </InlineTip>
           )}
         </RouteDrawer.Body>
@@ -272,11 +272,11 @@ const MetadataForm = ({ orderId, metadata }: MetadataFormProps) => {
           <div className="flex items-center justify-end gap-x-2">
             <RouteDrawer.Close asChild>
               <Button size="small" variant="secondary" type="button">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit" isLoading={isPending}>
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>

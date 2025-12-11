@@ -28,7 +28,7 @@ export const SummarySection = ({ order }: SummarySectionProps) => {
   return (
     <Container className="p-0 overflow-hidden">
       <div className="px-6 py-4 flex items-center justify-between gap-x-4">
-        <Heading>Summary</Heading>
+        <Heading>Resumen</Heading>
         <ActionMenu
           groups={[
             {
@@ -167,7 +167,7 @@ const Total = ({
           </Text>
           <div className="flex items-center justify-end">
             <Text size="small" leading="compact">
-              {`${itemCount} ${itemCount === 1 ? "item" : "items"}`}
+              {`${itemCount} ${itemCount === 1 ? "artículo" : "artículos"}`}
             </Text>
           </div>
           <div className="flex items-center justify-end">
@@ -180,7 +180,7 @@ const Total = ({
       {shippingSubtotal !== null && (
         <div className="flex items-center justify-between gap-x-4 text-ui-fg-subtle">
           <Text size="small" leading="compact">
-            Shipping
+            Envío
           </Text>
           <Text size="small" leading="compact">
             {getLocaleAmount(shippingSubtotal, currencyCode)}
@@ -197,7 +197,7 @@ const Total = ({
           )}
         >
           <Text size="small" leading="compact">
-            Discount
+            Descuento
           </Text>
           <div className="flex items-center justify-end gap-x-2">
             {promotions.map((promotion) => (
@@ -218,7 +218,7 @@ const Total = ({
       {taxTotal !== null && (
         <div className="flex items-center justify-between gap-x-4 text-ui-fg-subtle">
           <Text size="small" leading="compact">
-            Tax
+            Impuestos
           </Text>
           <Text size="small" leading="compact">
             {taxTotal > 0 ? getLocaleAmount(taxTotal, currencyCode) : "-"}
@@ -252,9 +252,9 @@ const Footer = ({ order }: { order: HttpTypes.AdminOrder }) => {
 
   const handleConvert = async () => {
     const res = await prompt({
-      title: "Are you sure?",
+      title: "¿Estás seguro?",
       description:
-        "You are about to convert this draft order to an order. This action cannot be undone.",
+        "Vas a convertir este pedido borrador en un pedido. Esta acción no se puede deshacer.",
       variant: "confirmation",
     })
 
@@ -264,7 +264,7 @@ const Footer = ({ order }: { order: HttpTypes.AdminOrder }) => {
 
     await convertDraftOrder(undefined, {
       onSuccess: () => {
-        toast.success("Draft order converted to order")
+        toast.success("Pedido borrador convertido en pedido")
         navigate(`/orders/${order.id}`)
       },
       onError: (error) => {
@@ -281,7 +281,7 @@ const Footer = ({ order }: { order: HttpTypes.AdminOrder }) => {
         isLoading={isPending}
         onClick={handleConvert}
       >
-        Convert to order
+        Convertir en pedido
       </Button>
     </div>
   )

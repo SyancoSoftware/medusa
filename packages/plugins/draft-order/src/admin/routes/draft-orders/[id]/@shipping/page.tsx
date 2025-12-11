@@ -100,12 +100,11 @@ const Shipping = () => {
             <div className="flex flex-1 flex-col items-center overflow-y-auto">
               <div className="flex w-full max-w-[720px] flex-col gap-y-6 px-6 py-16">
                 <RouteFocusModal.Title asChild>
-                  <Heading>Shipping</Heading>
+                  <Heading>Envío</Heading>
                 </RouteFocusModal.Title>
                 <RouteFocusModal.Description asChild>
                   <Text size="small" className="text-ui-fg-subtle">
-                    This draft order currently has no items. Add items to the
-                    order before adding shipping.
+                    Este pedido borrador no tiene artículos. Agrega artículos antes de añadir el envío.
                   </Text>
                 </RouteFocusModal.Description>
               </div>
@@ -114,7 +113,7 @@ const Shipping = () => {
           <RouteFocusModal.Footer>
             <RouteFocusModal.Close asChild>
               <Button size="small" variant="secondary" type="button">
-                Cancel
+                Cancelar
               </Button>
             </RouteFocusModal.Close>
           </RouteFocusModal.Footer>
@@ -124,11 +123,11 @@ const Shipping = () => {
       ) : (
         <div>
           <RouteFocusModal.Title asChild>
-            <span className="sr-only">Edit Shipping</span>
+            <span className="sr-only">Editar envío</span>
           </RouteFocusModal.Title>
           <RouteFocusModal.Description asChild>
             <span className="sr-only">
-              Loading data for the draft order, please wait...
+              Cargando datos para el borrador del pedido, por favor espere...
             </span>
           </RouteFocusModal.Description>
         </div>
@@ -200,7 +199,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
 
     await requestOrderEdit(undefined, {
       onError: (e) => {
-        toast.error(`Failed to request order edit: ${e.message}`)
+        toast.error(`No se pudo solicitar la edición del pedido. ${e.message}`)
       },
       onSuccess: () => {
         requestSucceeded = true
@@ -214,7 +213,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
 
     await confirmOrderEdit(undefined, {
       onError: (e) => {
-        toast.error(`Failed to confirm order edit: ${e.message}`)
+        toast.error(`No se pudo confirmar la edición del pedido: ${e.message}`)
       },
       onSuccess: () => {
         handleSuccess()
@@ -259,8 +258,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
               </RouteFocusModal.Title>
               <RouteFocusModal.Description asChild>
                 <Text size="small" className="text-ui-fg-subtle">
-                  Choose which shipping method(s) to use for the items in the
-                  order.
+                  Elija el/los método(s) de envío que desea utilizar para los artículos del pedido.
                 </Text>
               </RouteFocusModal.Description>
             </div>
@@ -273,14 +271,14 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
                     weight="plus"
                     className="text-ui-fg-muted"
                   >
-                    Shipping profile
+                    Perfil de envío
                   </Text>
                   <Text
                     size="xsmall"
                     weight="plus"
                     className="text-ui-fg-muted"
                   >
-                    Action
+                    Acción
                   </Text>
                 </div>
                 <div className="px-[5px] pb-[5px]">
@@ -418,7 +416,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
                                   actions: [
                                     hasItems
                                       ? {
-                                          label: "Edit shipping option",
+                                          label: "Editar opción de envío",
                                           icon: <Channels />,
                                           onClick: () => {
                                             setIsOpen(
@@ -434,7 +432,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
                                         }
                                       : undefined,
                                     {
-                                      label: "Remove shipping option",
+                                      label: "Eliminar opción de envío",
                                       icon: <Trash />,
                                       onClick: () => {
                                         if (shippingMethod) {
@@ -546,7 +544,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
         <div className="flex justify-end gap-x-2">
           <RouteFocusModal.Close asChild>
             <Button size="small" variant="secondary" type="button">
-              Cancel
+              Cancelar
             </Button>
           </RouteFocusModal.Close>
           <Button
@@ -555,7 +553,7 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
             isLoading={isSubmitting}
             onClick={onSubmit}
           >
-            Save
+            Guardar
           </Button>
         </div>
       </RouteFocusModal.Footer>
@@ -701,9 +699,7 @@ const ShippingProfileForm = ({
                   </RouteFocusModal.Title>
                   <RouteFocusModal.Description asChild>
                     <Text size="small" className="text-ui-fg-subtle">
-                      Add a shipping method for the selected shipping profile.
-                      You can see the items that will be shipped using this
-                      method in the preview below.
+                      Agrega un método de envío para el perfil de envío seleccionado. Puedes ver los artículos que se enviarán con este método en la vista previa a continuación.
                     </Text>
                   </RouteFocusModal.Description>
                 </div>
@@ -735,7 +731,7 @@ const ShippingProfileForm = ({
             <div className="flex justify-end gap-x-2">
               <StackedFocusModal.Close asChild>
                 <Button size="small" variant="secondary" type="button">
-                  Cancel
+                  Cancelar
                 </Button>
               </StackedFocusModal.Close>
               <Button
@@ -743,7 +739,7 @@ const ShippingProfileForm = ({
                 type="submit"
                 isLoading={isPending || isUpdatingShippingMethod}
               >
-                {data.shippingMethod ? "Update" : "Add"}
+                {data.shippingMethod ? "Actualizar" : "Añadir"}
               </Button>
             </div>
           </StackedFocusModal.Footer>
@@ -774,10 +770,10 @@ const ItemsPreview = ({ order, shippingProfileId }: ItemsPreviewProps) => {
       <div className="grid grid-cols-2 items-center gap-3">
         <div className="flex flex-col">
           <Text size="small" weight="plus" leading="compact">
-            Items to ship
+            Artículos para enviar
           </Text>
           <Text size="small" className="text-ui-fg-subtle">
-            Items with the selected shipping profile.
+            Artículos con el perfil de envío seleccionado.
           </Text>
         </div>
       </div>
@@ -790,7 +786,7 @@ const ItemsPreview = ({ order, shippingProfileId }: ItemsPreviewProps) => {
           </div>
           <div>
             <Text size="small" weight="plus">
-              Quantity
+              Cantidad
             </Text>
           </div>
         </div>
@@ -840,10 +836,10 @@ const ItemsPreview = ({ order, shippingProfileId }: ItemsPreviewProps) => {
           ) : (
             <div className="bg-ui-bg-base shadow-elevation-card-rest flex flex-col items-center justify-center gap-1 gap-x-3 rounded-lg p-4">
               <Text size="small" weight="plus" leading="compact">
-                No items found
+                No se encontraron datos.
               </Text>
               <Text size="small" className="text-ui-fg-subtle">
-                No items found for "{query}".
+                No se encontraron para "{query}".
               </Text>
             </div>
           )}
@@ -881,9 +877,9 @@ const LocationField = ({ control, setValue }: LocationFieldProps) => {
           <Form.Item>
             <div className="grid grid-cols-2 gap-x-3">
               <div>
-                <Form.Label>Location</Form.Label>
+                <Form.Label>Ubicación</Form.Label>
                 <Form.Hint>
-                  Choose where you want to ship the items from.
+                  Elige desde dónde quieres enviar los artículos.
                 </Form.Hint>
               </div>
               <Form.Control>
@@ -893,7 +889,7 @@ const LocationField = ({ control, setValue }: LocationFieldProps) => {
                   isFetchingNextPage={locations.isFetchingNextPage}
                   searchValue={locations.searchValue}
                   onSearchValueChange={locations.onSearchValueChange}
-                  placeholder="Select location"
+                  placeholder="Seleccionar ubicación"
                   onChange={(value) => {
                     setValue("shipping_option_id", "", {
                       shouldDirty: true,
@@ -960,10 +956,10 @@ const ShippingOptionField = ({
 
   const tooltipContent =
     !locationId && !shippingProfileId
-      ? "Choose a location and shipping profile first."
+      ? "Primero, elige una ubicación y un perfil de envío."
       : !locationId
-      ? "Choose a location first."
-      : "Choose a shipping profile first."
+      ? "Primero, elige una ubicación."
+      : "Primero, elige un perfil de envío."
 
   return (
     <Form.Field
@@ -974,8 +970,8 @@ const ShippingOptionField = ({
           <Form.Item>
             <div className="grid grid-cols-2 gap-x-3">
               <div className="flex flex-col">
-                <Form.Label>Shipping option</Form.Label>
-                <Form.Hint>Choose the shipping option to use.</Form.Hint>
+                <Form.Label>Opción de envío</Form.Label>
+                <Form.Hint>Seleccione la opción de envío que desea utilizar.</Form.Hint>
               </div>
               <ConditionalTooltip
                 content={tooltipContent}
@@ -989,7 +985,7 @@ const ShippingOptionField = ({
                       isFetchingNextPage={shippingOptions.isFetchingNextPage}
                       searchValue={shippingOptions.searchValue}
                       onSearchValueChange={shippingOptions.onSearchValueChange}
-                      placeholder="Select shipping option"
+                      placeholder="Seleccionar opción de envío"
                       {...field}
                       disabled={!locationId || !shippingProfileId}
                     />
@@ -1021,9 +1017,9 @@ const CustomAmountField = ({
         return (
           <div className="grid grid-cols-2 gap-x-3">
             <div className="flex flex-col">
-              <Form.Label optional>Custom amount</Form.Label>
+              <Form.Label optional>Importe personalizado</Form.Label>
               <Form.Hint>
-                Set a custom amount for the shipping option.
+                Establece un importe personalizado para la opción de envío.
               </Form.Hint>
             </div>
             <Form.Control>

@@ -32,11 +32,11 @@ const TransferOwnership = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Transfer Ownership</Heading>
+          <Heading>Transferir propiedad</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description asChild>
           <span className="sr-only">
-            Transfer the ownership of this draft order to a new customer
+            Transfiera la propiedad de este borrador de pedido a un nuevo cliente.
           </span>
         </RouteDrawer.Description>
       </RouteDrawer.Header>
@@ -78,7 +78,7 @@ const TransferOwnershipForm = ({ order }: TransferOwnershipFormProps) => {
       { customer_id: data.customer_id },
       {
         onSuccess: () => {
-          toast.success("Customer updated")
+          toast.success("Cliente actualizado")
           handleSuccess()
         },
         onError: (error) => {
@@ -102,11 +102,10 @@ const TransferOwnershipForm = ({ order }: TransferOwnershipFormProps) => {
             <div className="flex flex-col space-y-3">
               <div className="flex flex-col">
                 <Label size="small" weight="plus" htmlFor="current-customer">
-                  Current owner
+                  Cliente actual
                 </Label>
                 <Hint>
-                  The customer that is currently associated with this draft
-                  order.
+                  El cliente que actualmente está asociado con este pedido borrador.
                 </Hint>
               </div>
               <Select disabled value={currentCustomer.value}>
@@ -130,11 +129,11 @@ const TransferOwnershipForm = ({ order }: TransferOwnershipFormProps) => {
           <div className="flex items-center justify-end gap-x-2">
             <RouteDrawer.Close asChild>
               <Button variant="secondary" size="small">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit" isLoading={isPending}>
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>
@@ -178,8 +177,8 @@ const CustomerField = ({ control, currentCustomerId }: CustomerFieldProps) => {
       render={({ field }) => (
         <Form.Item className="space-y-3">
           <div className="flex flex-col">
-            <Form.Label>New customer</Form.Label>
-            <Form.Hint>The customer to transfer this draft order to.</Form.Hint>
+            <Form.Label>Nuevo cliente</Form.Label>
+            <Form.Hint>El cliente al que se transferirá este borrador de pedido.</Form.Hint>
           </div>
           <Form.Control>
             <Combobox
@@ -188,7 +187,7 @@ const CustomerField = ({ control, currentCustomerId }: CustomerFieldProps) => {
               isFetchingNextPage={customers.isFetchingNextPage}
               searchValue={customers.searchValue}
               onSearchValueChange={customers.onSearchValueChange}
-              placeholder="Select customer"
+              placeholder="Seleccionar cliente"
               {...field}
             />
           </Form.Control>

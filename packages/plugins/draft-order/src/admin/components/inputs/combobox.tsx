@@ -264,7 +264,7 @@ const ComboboxImpl = <T extends Value = string>(
               )}
             >
               <Text size="small" leading="compact">
-                Selected
+                Seleccionado
               </Text>
             </div>
           )}
@@ -370,7 +370,7 @@ const ComboboxImpl = <T extends Value = string>(
                 leading="compact"
                 className="text-ui-fg-subtle"
               >
-                No results found
+                Sin resultados
               </Text>
             </div>
           ))}
@@ -385,7 +385,7 @@ const ComboboxImpl = <T extends Value = string>(
             >
               <PlusMini className="text-ui-fg-subtle" />
               <Text size="small" leading="compact">
-                Create &quot;{searchValue}&quot;
+                Crear &quot;{searchValue}&quot;
               </Text>
             </PrimitiveComboboxItem>
           </Fragment>

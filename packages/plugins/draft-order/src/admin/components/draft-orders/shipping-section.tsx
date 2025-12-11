@@ -101,7 +101,7 @@ export const ShippingSection = ({ order }: ShippingSectionProps) => {
   return (
     <Container className="p-0 overflow-hidden">
       <div className="px-6 py-4">
-        <Heading>Shipping</Heading>
+        <Heading>Envío</Heading>
       </div>
       <Divider variant="dashed" />
       <Accordion.Root type="multiple">
@@ -280,7 +280,7 @@ const ProfileWithoutShipping = ({
             </div>
           </div>
           <div>
-            <StatusBadge color="orange">Requires shipping</StatusBadge>
+            <StatusBadge color="orange">Requiere envío</StatusBadge>
           </div>
         </div>
         <ShippingProfileItems profile={profile} />
@@ -349,7 +349,7 @@ const Footer = ({ isSomeProfilesAssigned }: FooterProps) => {
     <div className="px-6 py-4 flex items-center justify-end bg-ui-bg-component">
       <Button size="small" variant="secondary" asChild>
         <Link to="shipping">
-          {isSomeProfilesAssigned ? "Edit shipping" : "Add shipping"}
+          {isSomeProfilesAssigned ? "Editar envío" : "Agregar envío"}
         </Link>
       </Button>
     </div>

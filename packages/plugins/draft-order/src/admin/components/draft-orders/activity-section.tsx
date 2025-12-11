@@ -28,7 +28,7 @@ export const ActivitySection = ({ order, changes }: ActivitySectionProps) => {
   return (
     <Container className="overflow-hidden p-0">
       <div className="px-6 py-4">
-        <Heading>Activity</Heading>
+        <Heading>Actividad</Heading>
       </div>
       <ActivityItemList items={activityItems} />
     </Container>
@@ -87,9 +87,9 @@ const CollapsibleActivityItemList = ({
           </div>
           <Collapsible.Trigger className="text-ui-fg-muted hover:text-ui-fg-base focus:text-ui-fg-base m-0 p-0 pb-4 text-left outline-none transition-colors">
             <Text size="small" leading="compact" weight="plus">
-              {`Show ${items.length} more ${
-                items.length === 1 ? "activity" : "activities"
-              }`}
+              {`Mostrar ${items.length} ${
+                items.length === 1 ? "actividad" : "actividades"
+              } mas`}
             </Text>
           </Collapsible.Trigger>
         </div>
@@ -272,61 +272,61 @@ function getEditActivityItems(
     const addedText = getText(
       added,
       type === "items"
-        ? "item"
+        ? "articulo"
         : type === "shipping"
-        ? "shipping method"
-        : "promotion",
+        ? "método de envío"
+        : "promoción",
       type === "items"
-        ? "items"
+        ? "articulos"
         : type === "shipping"
-        ? "shipping methods"
-        : "promotions"
+        ? "métodos de envío"
+        : "promociones"
     )
     const removedText = getText(
       Math.abs(removed),
       type === "items"
-        ? "item"
+        ? "articulo"
         : type === "shipping"
-        ? "shipping method"
-        : "promotion",
+        ? "método de envío"
+        : "promocion",
       type === "items"
-        ? "items"
+        ? "articulos"
         : type === "shipping"
-        ? "shipping methods"
-        : "promotions"
+        ? "métodos de envío"
+        : "promociones"
     )
 
     const content =
       added && removed
-        ? `Added ${addedText}, removed ${removedText}`
+        ? `Añadido ${addedText}, removido ${removedText}`
         : added
-        ? `Added ${addedText}`
-        : `Removed ${removedText}`
+        ? `Añadido ${addedText}`
+        : `Removido ${removedText}`
 
     const label =
       added && removed
         ? `${
             type === "items"
-              ? "Items"
+              ? "Articulos"
               : type === "shipping"
-              ? "Shipping methods"
-              : "Promotions"
-          } updated`
+              ? "Metodos de envío"
+              : "Promociones"
+          } actualizados`
         : added
         ? `${
             type === "items"
-              ? "Items"
+              ? "Articulos"
               : type === "shipping"
-              ? "Shipping methods"
-              : "Promotions"
-          } added`
+              ? "Metodos de envío"
+              : "Promociones"
+          } añadidos`
         : `${
             type === "items"
-              ? "Items"
+              ? "Articulos"
               : type === "shipping"
-              ? "Shipping methods"
-              : "Promotions"
-          } removed`
+              ? "Metodos de envío"
+              : "Promociones"
+          } removidos`
 
     activityItems.push({
       label,
@@ -353,8 +353,8 @@ function getEditActivityItems(
 
 function getTransferActivityItem(change: HttpTypes.AdminOrderChange) {
   return {
-    label: "Transferred",
-    content: "Draft order transferred",
+    label: "Transferido",
+    content: "Pedido borrador transferido",
     timestamp: new Date(change.created_at).toISOString(),
   }
 }
@@ -369,31 +369,31 @@ function getUpdateOrderActivityItem(change: HttpTypes.AdminOrderChange) {
   switch (details.type) {
     case "customer_id":
       return {
-        label: "Customer updated",
+        label: "Cliente actualizado",
         timestamp: new Date(change.created_at).toISOString(),
         userId: change.confirmed_by,
       }
     case "sales_channel_id":
       return {
-        label: "Sales channel updated",
+        label: "Canal de ventas actualizado",
         timestamp: new Date(change.created_at).toISOString(),
         userId: change.confirmed_by,
       }
     case "billing_address":
       return {
-        label: "Billing address updated",
+        label: "Dirección de facturación actualizada",
         timestamp: new Date(change.created_at).toISOString(),
         userId: change.confirmed_by,
       }
     case "shipping_address":
       return {
-        label: "Shipping address updated",
+        label: "Dirección de envío actualizada",
         timestamp: new Date(change.created_at).toISOString(),
         userId: change.confirmed_by,
       }
     case "email":
       return {
-        label: "Email updated",
+        label: "Email actualizado",
         timestamp: new Date(change.created_at).toISOString(),
         userId: change.confirmed_by,
       }
@@ -411,8 +411,8 @@ function getActivityItems(
 
   if (order.created_at) {
     items.push({
-      label: "Created",
-      content: "Draft order created",
+      label: "Creado",
+      content: "Pedido borrador creado",
       timestamp: new Date(order.created_at).toISOString(),
     })
   }

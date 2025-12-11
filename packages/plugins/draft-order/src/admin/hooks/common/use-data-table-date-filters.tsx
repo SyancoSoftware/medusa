@@ -16,31 +16,31 @@ const useDateFilterOptions = () => {
   return useMemo(() => {
     return [
       {
-        label: "Today",
+        label: "Hoy",
         value: {
           $gte: today.toISOString(),
         },
       },
       {
-        label: "Last 7 days",
+        label: "Ultimos 7 dias",
         value: {
           $gte: subDays(today, 7).toISOString(), // 7 days ago
         },
       },
       {
-        label: "Last 30 days",
+        label: "Ultimos 30 dias",
         value: {
           $gte: subDays(today, 30).toISOString(), // 30 days ago
         },
       },
       {
-        label: "Last 90 days",
+        label: "Ultimos 90 dias",
         value: {
           $gte: subDays(today, 90).toISOString(), // 90 days ago
         },
       },
       {
-        label: "Last 12 months",
+        label: "Ultimos 12 meses",
         value: {
           $gte: subMonths(today, 12).toISOString(), // 12 months ago
         },
@@ -60,9 +60,9 @@ export const useDataTableDateFilters = (disableRangeOption?: boolean) => {
     }
 
     return {
-      rangeOptionStartLabel: "Starting",
-      rangeOptionEndLabel: "Ending",
-      rangeOptionLabel: "Custom",
+      rangeOptionStartLabel: "Inicio",
+      rangeOptionEndLabel: "Fin",
+      rangeOptionLabel: "Personalizado",
       options: dateFilterOptions,
     }
   }, [disableRangeOption, dateFilterOptions])
@@ -71,7 +71,7 @@ export const useDataTableDateFilters = (disableRangeOption?: boolean) => {
     return [
       filterHelper.accessor("created_at", {
         type: "date",
-        label: "Created at",
+        label: "Fecha de creación",
         format: "date",
         formatDateValue: (date) => getFullDate({ date }),
         options: dateFilterOptions,
@@ -79,7 +79,7 @@ export const useDataTableDateFilters = (disableRangeOption?: boolean) => {
       }),
       filterHelper.accessor("updated_at", {
         type: "date",
-        label: "Updated at",
+        label: "Fecha de actualización",
         format: "date",
         formatDateValue: (date) => getFullDate({ date }),
         options: dateFilterOptions,

@@ -55,7 +55,7 @@ const Promotions = () => {
     <RouteDrawer onClose={onCancel}>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Edit Promotions</Heading>
+          <Heading>Editar promociones</Heading>
         </RouteDrawer.Title>
       </RouteDrawer.Header>
       {isReady && <PromotionForm preview={preview} />}
@@ -176,10 +176,10 @@ const PromotionForm = ({ preview }: PromotionFormProps) => {
           <div className="flex flex-col gap-3">
             <div className="flex flex-col">
               <Label size="small" weight="plus" htmlFor="promotion-combobox">
-                Apply promotions
+                Aplicar promociones
               </Label>
               <Hint id="promotion-combobox-hint">
-                Manage promotions that should be applied to the order.
+                Gestionar las promociones que deben aplicarse al pedido.
               </Hint>
             </div>
             <Combobox
@@ -212,7 +212,7 @@ const PromotionForm = ({ preview }: PromotionFormProps) => {
         <div className="flex justify-end gap-2">
           <RouteDrawer.Close asChild>
             <Button size="small" variant="secondary">
-              Cancel
+              Cancelar
             </Button>
           </RouteDrawer.Close>
           <Button
@@ -220,7 +220,7 @@ const PromotionForm = ({ preview }: PromotionFormProps) => {
             type="submit"
             isLoading={isSubmitting || isAddingPromotions}
           >
-            Save
+            Guardar
           </Button>
         </div>
       </RouteDrawer.Footer>

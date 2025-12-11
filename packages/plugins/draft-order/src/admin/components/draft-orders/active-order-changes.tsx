@@ -29,7 +29,7 @@ export const ActiveOrderChange = ({ orderId }: ActiveOrderChangeProps) => {
         toast.error(e.message)
       },
       onSuccess: () => {
-        toast.success("Edit cancelled")
+        toast.success("Edición cancelada")
       },
     })
   }
@@ -48,14 +48,14 @@ export const ActiveOrderChange = ({ orderId }: ActiveOrderChangeProps) => {
       <Container className="p-0 overflow-hidden">
         <div className="px-6 py-4 flex items-center gap-x-2">
           <ExclamationCircleSolid className="text-ui-fg-interactive" />
-          <Heading>Edit pending</Heading>
+          <Heading>Edición pendiente</Heading>
         </div>
         <Divider variant="dashed" />
         <div className="px-6 py-4">
           <Text className="text-pretty">
             {noActions
-              ? "There is a pending edit on this draft order with no changes. Click below to cancel it, or open one of the menus to start making changes."
-              : "There is a pending edit on this draft order with changes. Click below to cancel it, or continue to complete the edit."}
+              ? "Hay una edición pendiente en este borrador de pedido sin cambios. Haga clic abajo para cancelarla o abra uno de los menús para comenzar a realizar cambios."
+              : "Hay una edición pendiente en este borrador de pedido con cambios. Haga clic abajo para cancelarla o para continuar y completar la edición."}
           </Text>
         </div>
         <Divider variant="dashed" />
@@ -67,7 +67,7 @@ export const ActiveOrderChange = ({ orderId }: ActiveOrderChangeProps) => {
               isLoading={isMutating}
               onClick={onCancel}
             >
-              Continue
+              Continuar
             </Button>
           )}
           <Button
@@ -76,7 +76,7 @@ export const ActiveOrderChange = ({ orderId }: ActiveOrderChangeProps) => {
             isLoading={isMutating}
             onClick={onCancel}
           >
-            Cancel
+            Cancelar
           </Button>
         </div>
       </Container>

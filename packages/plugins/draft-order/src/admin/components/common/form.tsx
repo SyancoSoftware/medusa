@@ -146,7 +146,7 @@ const Label = forwardRef<
         {icon}
         {optional && (
           <Text size="small" leading="compact" className="text-ui-fg-muted">
-            (Optional)
+            (Opcional)
           </Text>
         )}
       </div>

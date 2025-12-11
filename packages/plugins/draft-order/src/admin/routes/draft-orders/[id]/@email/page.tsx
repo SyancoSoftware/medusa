@@ -26,10 +26,10 @@ const Email = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>Edit Email</Heading>
+          <Heading>Editar Email</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description asChild>
-          <span className="sr-only">Edit the email for the draft order</span>
+          <span className="sr-only">Edita el email para el borrador del pedido.</span>
         </RouteDrawer.Description>
       </RouteDrawer.Header>
       {isReady && <EmailForm order={order} />}
@@ -91,11 +91,11 @@ const EmailForm = ({ order }: EmailFormProps) => {
           <div className="flex justify-end gap-2">
             <RouteDrawer.Close asChild>
               <Button size="small" variant="secondary">
-                Cancel
+                Cancelar
               </Button>
             </RouteDrawer.Close>
             <Button size="small" type="submit" isLoading={isPending}>
-              Save
+              Guardar
             </Button>
           </div>
         </RouteDrawer.Footer>
