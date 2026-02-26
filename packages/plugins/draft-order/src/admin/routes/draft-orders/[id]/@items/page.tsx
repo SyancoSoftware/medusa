@@ -21,6 +21,7 @@ import {
 import { keepPreviousData } from "@tanstack/react-query"
 import { matchSorter } from "match-sorter"
 import { useCallback, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 
 import type { AdminOrderPreviewLineItem } from "../../../../../types/http/orders/entity"
@@ -777,6 +778,7 @@ const StackedModalTrigger = ({
   type,
   setModalContent,
 }: StackedModalTriggerProps) => {
+  const { t } = useTranslation()
   const { setIsOpen } = useStackedModal()
 
   const onClick = useCallback(() => {
@@ -788,8 +790,8 @@ const StackedModalTrigger = ({
     <StackedFocusModal.Trigger asChild>
       <DropdownMenu.Item onClick={onClick}>
         {type === StackedModalContent.ADD_ITEMS
-          ? "Add items"
-          : "Add custom item"}
+          ? t("draftOrders.addItems", { defaultValue: "Add items" })
+          : t("draftOrders.addCustomItem", { defaultValue: "Add custom item" })}
       </DropdownMenu.Item>
     </StackedFocusModal.Trigger>
   )
@@ -936,6 +938,8 @@ const columnHelper =
   createDataTableColumnHelper<HttpTypes.AdminProductVariant>()
 
 const useColumns = () => {
+  const { t } = useTranslation()
+
   return useMemo(() => {
     return [
       columnHelper.select(),
@@ -966,7 +970,7 @@ const useColumns = () => {
         enableSorting: true,
       }),
       columnHelper.accessor("updated_at", {
-        header: "Updated",
+        header: t("fields.updatedAt", { defaultValue: "Updated" }),
         cell: ({ getValue }) => {
           return (
             <Tooltip
@@ -996,7 +1000,7 @@ const useColumns = () => {
         sortDescLabel: "Newest first",
       }),
     ]
-  }, [])
+  }, [t])
 }
 
 interface CustomItemFormProps {
@@ -1005,6 +1009,7 @@ interface CustomItemFormProps {
 }
 
 const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
+  const { t } = useTranslation()
   const { setIsOpen } = useStackedModal()
   const { mutateAsync: addItems } = useDraftOrderAddItems(orderId)
 
@@ -1049,7 +1054,11 @@ const CustomItemForm = ({ orderId, currencyCode }: CustomItemFormProps) => {
               <div className="flex w-full max-w-[720px] flex-col gap-y-6 px-2 py-16">
                 <div>
                   <StackedFocusModal.Title asChild>
-                    <Heading>Add custom item</Heading>
+                    <Heading>
+                      {t("draftOrders.addCustomItem", {
+                        defaultValue: "Add custom item",
+                      })}
+                    </Heading>
                   </StackedFocusModal.Title>
                   <StackedFocusModal.Description asChild>
                     <Text size="small" className="text-ui-fg-subtle">

@@ -10,6 +10,7 @@ import {
   toast,
   usePrompt,
 } from "@medusajs/ui"
+import { useTranslation } from "react-i18next"
 import { Link, useNavigate } from "react-router-dom"
 import { useConvertDraftOrder } from "../../hooks/api/draft-orders"
 import { getLocaleAmount, getStylizedAmount } from "../../lib/data/currencies"
@@ -23,6 +24,7 @@ interface SummarySectionProps {
 }
 
 export const SummarySection = ({ order }: SummarySectionProps) => {
+  const { t } = useTranslation()
   const promotions: HttpTypes.AdminPromotion[] | null = order.promotions || []
 
   return (
@@ -34,7 +36,9 @@ export const SummarySection = ({ order }: SummarySectionProps) => {
             {
               actions: [
                 {
-                  label: "Edit items",
+                  label: t("draftOrders.editItems", {
+                    defaultValue: "Edit items",
+                  }),
                   icon: <Plus />,
                   to: "items",
                 },
@@ -43,7 +47,9 @@ export const SummarySection = ({ order }: SummarySectionProps) => {
             {
               actions: [
                 {
-                  label: "Edit promotions",
+                  label: t("draftOrders.editPromotions", {
+                    defaultValue: "Edit promotions",
+                  }),
                   icon: <ReceiptPercent />,
                   to: "promotions",
                 },

@@ -1,6 +1,7 @@
 import { ArrowPath, CurrencyDollar, Envelope, FlyingBox } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Avatar, Container, Copy, Heading, Text } from "@medusajs/ui"
+import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import {
   getFormattedAddress,
@@ -25,15 +26,21 @@ export const CustomerSection = ({ order }: CustomerSectionProps) => {
 }
 
 const Header = () => {
+  const { t } = useTranslation()
+
   return (
     <div className="flex items-center justify-between px-6 py-4 gap-2">
-      <Heading level="h2">Customer</Heading>
+      <Heading level="h2">
+        {t("fields.customer", { defaultValue: "Customer" })}
+      </Heading>
       <ActionMenu
         groups={[
           {
             actions: [
               {
-                label: "Transfer ownership",
+                label: t("draftOrders.transferOwnership", {
+                  defaultValue: "Transfer ownership",
+                }),
                 to: "transfer-ownership",
                 icon: <ArrowPath />,
               },
@@ -42,12 +49,16 @@ const Header = () => {
           {
             actions: [
               {
-                label: "Edit shipping address",
+                label: t("draftOrders.editShippingAddress", {
+                  defaultValue: "Edit shipping address",
+                }),
                 to: "shipping-address",
                 icon: <FlyingBox />,
               },
               {
-                label: "Edit billing address",
+                label: t("draftOrders.editBillingAddress", {
+                  defaultValue: "Edit billing address",
+                }),
                 to: "billing-address",
                 icon: <CurrencyDollar />,
               },
@@ -56,7 +67,9 @@ const Header = () => {
           {
             actions: [
               {
-                label: "Edit email",
+                label: t("draftOrders.editEmail", {
+                  defaultValue: "Edit email",
+                }),
                 to: `email`,
                 icon: <Envelope />,
               },

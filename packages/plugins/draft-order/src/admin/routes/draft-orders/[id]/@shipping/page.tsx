@@ -12,6 +12,7 @@ import {
 } from "@medusajs/ui"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Control, useForm, UseFormSetValue, useWatch } from "react-hook-form"
+import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 import { z } from "zod"
 
@@ -148,6 +149,7 @@ interface ShippingFormData {
 }
 
 const ShippingForm = ({ preview, order }: ShippingFormProps) => {
+  const { t } = useTranslation()
   const { setIsOpen } = useStackedModal()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [data, setData] = useState<ShippingFormData | null>(null)
@@ -254,7 +256,9 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
           <div className="flex w-full max-w-[720px] flex-col gap-y-6 px-6 py-16">
             <div>
               <RouteFocusModal.Title asChild>
-                <Heading>Shipping</Heading>
+                <Heading>
+                  {t("fields.shipping", { defaultValue: "Shipping" })}
+                </Heading>
               </RouteFocusModal.Title>
               <RouteFocusModal.Description asChild>
                 <Text size="small" className="text-ui-fg-subtle">
@@ -459,7 +463,9 @@ const ShippingForm = ({ preview, order }: ShippingFormProps) => {
                               shippingMethod={shippingMethod}
                               setData={setData}
                             >
-                              Add shipping option
+                              {t("draftOrders.addShippingOption", {
+                                defaultValue: "Add shipping option",
+                              })}
                             </StackedModalTrigger>
                           )}
                         </div>
@@ -617,6 +623,7 @@ const ShippingProfileForm = ({
   order,
   preview,
 }: ShippingProfileFormProps) => {
+  const { t } = useTranslation()
   const { setIsOpen } = useStackedModal()
 
   const form = useForm<z.infer<typeof shippingMethodSchema>>({
@@ -695,7 +702,9 @@ const ShippingProfileForm = ({
               <div className="flex w-full max-w-[720px] flex-col gap-y-6 px-6 py-16">
                 <div>
                   <RouteFocusModal.Title asChild>
-                    <Heading>Shipping</Heading>
+                    <Heading>
+                      {t("fields.shipping", { defaultValue: "Shipping" })}
+                    </Heading>
                   </RouteFocusModal.Title>
                   <RouteFocusModal.Description asChild>
                     <Text size="small" className="text-ui-fg-subtle">
