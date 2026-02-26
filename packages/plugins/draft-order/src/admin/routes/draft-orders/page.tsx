@@ -18,6 +18,7 @@ import { useSalesChannels } from "../../hooks/api/sales-channels"
 import { useDataTableDateFilters } from "../../hooks/common/use-data-table-date-filters"
 import { useQueryParams } from "../../hooks/common/use-query-params"
 import { getFullDate } from "../../lib/utils/date-utils"
+import { useTranslation } from "react-i18next"
 
 const PAGE_SIZE = 20
 
@@ -26,6 +27,7 @@ export const handle = {
 }
 
 const List = () => {
+  const { t } = useTranslation()
   const queryParams = useDraftOrderTableQuery({
     pageSize: PAGE_SIZE,
   })
@@ -60,20 +62,20 @@ const List = () => {
           isLoading={isPending}
           pageSize={PAGE_SIZE}
           rowCount={count}
-          heading="Pedidos en borrador"
+          heading={t("draftOrders.domain")}
           action={{
-            label: "Crear",
+            label: t("actions.create"),
             to: "create",
           }}
           rowHref={(row) => `${row.id}`}
           emptyState={{
             empty: {
-              heading: "No se encontraron pedidos en borrador",
-              description: "Para empezar, cree un nuevo borrador de pedido.",
+              heading: t("draftOrders.list.noRecordsMessage"),
+              description: t("draftOrders.list.description"),
             },
             filtered: {
-              heading: "Sin resultados",
-              description: "No hay pedidos en borrador que coincidan con sus criterios de filtro.",
+              heading: t("draftOrders.list.filtered.heading"),
+              description: t("draftOrders.list.filtered.description"),
             },
           }}
         />

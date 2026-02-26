@@ -1,9 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "@syancosoftware/medusajs-draft-order",
   "version": "2.13.3",
   "description": "Draft Order plugin con traducciones en español",
+=======
+  "name": "@medusajs/draft-order",
+  "version": "2.13.1",
+  "description": "A draft order plugin for Medusa.",
+>>>>>>> develop
   "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medusajs/medusa",
+    "directory": "packages/plugins/draft-order"
+  },
   "files": [
     ".medusa/server"
   ],

@@ -48,6 +48,10 @@ export const userGuide = [
     "path": "https://docs.medusajs.com/user-guide\\orders\\exchanges\\page.mdx"
   },
   {
+    "title": "Export Orders",
+    "path": "https://docs.medusajs.com/user-guide/orders/export"
+  },
+  {
     "title": "Manage Order Fulfillments",
     "path": "https://docs.medusajs.com/user-guide\\orders\\fulfillments\\page.mdx"
   },
@@ -202,6 +206,10 @@ export const userGuide = [
   {
     "title": "Manage Tax Regions",
     "path": "https://docs.medusajs.com/user-guide\\settings\\tax-regions\\page.mdx"
+  },
+  {
+    "title": "Manage Translations",
+    "path": "https://docs.medusajs.com/user-guide/settings/translations"
   },
   {
     "title": "Manage Invites",

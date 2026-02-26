@@ -36,6 +36,10 @@ export const tutorial = [
     "path": "https://docs.medusajs.com/resources\\how-to-tutorials\\tutorials\\category-images\\page.mdx"
   },
   {
+    "title": "Customer Tiers",
+    "path": "https://docs.medusajs.com/resources/how-to-tutorials/tutorials/customer-tiers"
+  },
+  {
     "title": "First-Purchase Discount",
     "path": "https://docs.medusajs.com/resources\\how-to-tutorials\\tutorials\\first-purchase-discounts\\page.mdx"
   },
@@ -92,6 +96,10 @@ export const tutorial = [
     "path": "https://docs.medusajs.com/resources\\integrations\\guides\\mailchimp\\page.mdx"
   },
   {
+    "title": "Integrate Okta",
+    "path": "https://docs.medusajs.com/resources/integrations/guides/okta"
+  },
+  {
     "title": "Integrate Payload",
     "path": "https://docs.medusajs.com/resources\\integrations\\guides\\payload\\page.mdx"
   },
@@ -102,6 +110,10 @@ export const tutorial = [
   {
     "title": "Integrate Slack",
     "path": "https://docs.medusajs.com/resources\\integrations\\guides\\slack\\page.mdx"
+  },
+  {
+    "title": "Integrate Strapi",
+    "path": "https://docs.medusajs.com/resources/integrations/guides/strapi"
   },
   {
     "title": "Build Wishlist Plugin",

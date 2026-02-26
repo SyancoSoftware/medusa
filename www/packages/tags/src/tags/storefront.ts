@@ -104,6 +104,14 @@ export const storefront = [
     "path": "https://docs.medusajs.com/resources\\storefront-development\\guides\\express-checkout\\page.mdx"
   },
   {
+    "title": "Implement Mobile App with React Native, Expo, and Medusa",
+    "path": "https://docs.medusajs.com/resources/storefront-development/guides/react-native-expo"
+  },
+  {
+    "title": "Storefront Localization",
+    "path": "https://docs.medusajs.com/resources/storefront-development/localization"
+  },
+  {
     "title": "Storefront Production Optimization Tips",
     "path": "https://docs.medusajs.com/resources\\storefront-development\\production-optimizations\\page.mdx"
   },
@@ -184,8 +192,8 @@ export const storefront = [
     "path": "https://docs.medusajs.com/resources\\storefront-development\\regions\\store-retrieve-region\\page.mdx"
   },
   {
-    "title": "Storefront Development Tips",
-    "path": "https://docs.medusajs.com/resources\\storefront-development\\tips\\page.mdx"
+    "title": "Connect Your Storefront to Medusa",
+    "path": "https://docs.medusajs.com/resources/storefront-development/tips"
   },
   {
     "title": "cart",
@@ -206,6 +214,10 @@ export const storefront = [
   {
     "title": "fulfillment",
     "path": "https://docs.medusajs.com/resources/references/js-sdk/store/fulfillment"
+  },
+  {
+    "title": "locale",
+    "path": "https://docs.medusajs.com/resources/references/js-sdk/store/locale"
   },
   {
     "title": "order",
